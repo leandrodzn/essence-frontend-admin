@@ -1,0 +1,32 @@
+@import './base.css';
+
+#app {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  min-height: 100vh;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: var(--primary);
+  transition: 0.1s;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  #app {
+    width: 100%;
+  }
+}
