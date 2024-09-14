@@ -13,6 +13,6 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 
-// app.component(VueFeather.name, VueFeather)
+app.component(VueFeather.name as string, VueFeather)
 
 app.mount('#app')
