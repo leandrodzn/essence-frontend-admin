@@ -1,7 +1,7 @@
 <template>
   <header :class="{ inLogin: inLogin }">
     <img
-      alt="BeluEssence Creatives Logo"
+      alt="Essence Creatives Logo"
       class="logo cursor-pointer"
       :class="{ inLogin: inLogin }"
       src="/Essence_Creatives_Logo.png"
@@ -12,11 +12,9 @@
 
     <nav v-if="!inLogin">
       <RouterLink to="/">Inicio</RouterLink>
-      <RouterLink to="/favorites" v-if="isLogged">Favoritos</RouterLink>
-      <RouterLink to="/history" v-if="isLogged">Historial</RouterLink>
-      <button @click="redirectLogin" type="button" class="btn btn-primary mx-2" v-if="!isLogged">
-        Iniciar sesión
-      </button>
+      <RouterLink to="/petitions" v-if="isLogged">Solicitudes</RouterLink>
+      <RouterLink to="/templates">Plantillas</RouterLink>
+      <RouterLink to="/events" v-if="isLogged">Eventos</RouterLink>
       <UserDropdown v-if="isLogged" class="mx-2" />
     </nav>
   </header>

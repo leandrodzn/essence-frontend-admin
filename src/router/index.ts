@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { NavigationGuardWithThis } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
 
 import { useLoginStore } from '@stores/login'
 import { useAdministratorsStore } from '@/stores/administrators'
@@ -28,9 +28,32 @@ const router = createRouter({
       beforeEnter: requireLogged
     },
     {
+      path: '/petitions',
+      name: 'petitions',
+      component: () => import('@views/PetitionsView.vue'),
+      beforeEnter: requireLogged
+    },
+    {
+      path: '/templates',
+      name: 'templates',
+      component: () => import('@views/TemplatesView.vue'),
+      beforeEnter: requireLogged
+    },
+    {
+      path: '/events',
+      name: 'events',
+      component: () => import('@views/EventsView.vue'),
+      beforeEnter: requireLogged
+    },
+    {
       path: '/login',
       name: 'login',
-      component: () => import('../views/LoginView.vue')
+      component: () => import('@/views/LoginView.vue')
+    },
+    // Catch-all path redirecting to /.
+    {
+      path: '/:pathMatch(.*)*', // Catches all undefined paths
+      redirect: '/'
     }
   ]
 })
