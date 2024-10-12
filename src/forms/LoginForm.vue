@@ -1,7 +1,7 @@
 <template>
   <div class="form text-center mt-2">
-    <h2 class="title">Iniciar sesión</h2>
-    <div class="mb-3">Ingrese sus credenciales</div>
+    <h2 class="title">Panel de control</h2>
+    <div class="mb-3">Inicie sesión con sus credenciales</div>
     <form class="mb-4" @submit.prevent="login">
       <div class="form-floating mb-3" :class="{ error: v$.email.$errors.length }">
         <input
@@ -14,22 +14,29 @@
         <label for="floatingInputSubject">Correo electrónico</label>
         <div v-if="v$.email.$error" class="validation-text">Correo electrónico es requerido</div>
       </div>
-
-      <div class="form-floating mb-3" :class="{ error: v$.password.$errors.length }">
-        <input
-          v-model="password"
-          class="form-control"
-          type="password"
-          placeholder="Contraseña"
-          id="floatingInputSubject"
-        />
-        <label for="floatingInputSubject">Contraseña</label>
-        <div v-if="v$.password.$error" class="validation-text mb-2">Contraseña es requerida</div>
-
-        <!-- <RouterLink to="/history" class="forgot-password">
+      <div class="input-group mb-3">
+        <div class="form-floating" :class="{ error: v$.password.$errors.length }">
+          <input
+            v-model="password"
+            class="form-control"
+            :type="showPassword ? 'text' : 'password'"
+            placeholder="Contraseña"
+            id="floatingInputSubject"
+          />
+          <label for="floatingInputSubject">Contraseña</label>
+          <div v-if="v$.password.$error" class="validation-text mb-2">Contraseña es requerida</div>
+        </div>
+        <button
+          class="btn btn-outline-primary d-flex align-items-center justify-content-center"
+          type="button"
+          @click="showPassword = !showPassword"
+        >
+          <vue-feather :type="showPassword ? 'eye-off' : 'eye'" size="15"></vue-feather>
+        </button>
+      </div>
+      <!-- <RouterLink to="/history" class="forgot-password">
           ¿Olvidaste tu contraseña?
         </RouterLink> -->
-      </div>
 
       <button type="submit" class="btn btn-primary">Iniciar sesión</button>
     </form>
@@ -67,7 +74,8 @@ export default {
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      showPassword: false
     }
   },
   validations() {
