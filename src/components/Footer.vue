@@ -37,13 +37,13 @@
   </div>
 </template>
 <script lang="ts">
-import LocationIcon from './icons/LocationIcon.vue'
-import MailIcon from './icons/MailIcon.vue'
-import CopyrightIcon from './icons/CopyrightIcon.vue'
-import TwitterIcon from './icons/TwitterIcon.vue'
-import LinkedinIcon from './icons/LinkedinIcon.vue'
-import InstagramIcon from './icons/InstagramIcon.vue'
-import PinterestIcon from './icons/PinterestIcon.vue'
+import LocationIcon from '@components/icons/LocationIcon.vue'
+import MailIcon from '@components/icons/MailIcon.vue'
+import CopyrightIcon from '@components/icons/CopyrightIcon.vue'
+import TwitterIcon from '@components/icons/TwitterIcon.vue'
+import LinkedinIcon from '@components/icons/LinkedinIcon.vue'
+import InstagramIcon from '@components/icons/InstagramIcon.vue'
+import PinterestIcon from '@components/icons/PinterestIcon.vue'
 
 export default {
   components: {

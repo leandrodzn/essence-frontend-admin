@@ -12,21 +12,21 @@
     />
   </svg>
 </template>
-<script>
+<script lang="ts">
 export default {
   props: {
     width: {
       type: String,
-      default: "1.1rem",
+      default: '1.1rem'
     },
     height: {
       type: String,
-      default: "1.1rem",
+      default: '1.1rem'
     },
     fillColor: {
       type: String,
-      default: "#E5D3DA",
-    },
-  },
-};
+      default: '#E5D3DA'
+    }
+  }
+}
 </script>

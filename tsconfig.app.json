@@ -15,7 +15,8 @@
       "@axios": ["./src/config/axios"],
       "@stores/*": ["./src/stores/*"],
       "@views/*": ["./src/views/*"],
-      "@forms/*": ["./src/forms/*"]
+      "@forms/*": ["./src/forms/*"],
+      "@components/*": ["./src/components/*"]
     }
   }
 }
