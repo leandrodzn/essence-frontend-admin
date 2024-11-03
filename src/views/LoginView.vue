@@ -8,16 +8,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import LoginForm from '../forms/LoginForm.vue'
-export default {
-  components: {
-    LoginForm
-  },
-  mounted() {
-    window.scrollTo(0, 0)
-  }
-}
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import LoginForm from '@forms/LoginForm.vue'
+
+onMounted(() => {
+  window.scrollTo(0, 0)
+})
 </script>
 
 <style lang="scss" scoped>
