@@ -4,15 +4,12 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  props: {
-    title: {
-      type: String,
-      required: true
-    }
-  }
-}
+<script setup lang="ts">
+import { defineProps } from 'vue'
+
+const props = defineProps<{
+  title: string
+}>()
 </script>
 
 <style lang="scss" scoped>

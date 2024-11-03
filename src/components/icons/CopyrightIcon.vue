@@ -19,21 +19,20 @@
     </defs>
   </svg>
 </template>
-<script lang="ts">
-export default {
-  props: {
-    width: {
-      type: String,
-      default: '1.1rem'
-    },
-    height: {
-      type: String,
-      default: '1.1rem'
-    },
-    fillColor: {
-      type: String,
-      default: '#E5D3DA'
-    }
+<script setup lang="ts">
+import { defineProps } from 'vue'
+const props = defineProps({
+  width: {
+    type: String,
+    default: '1.1rem'
+  },
+  height: {
+    type: String,
+    default: '1.1rem'
+  },
+  fillColor: {
+    type: String,
+    default: '#E5D3DA'
   }
-}
+})
 </script>

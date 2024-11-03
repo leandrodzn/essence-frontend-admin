@@ -5,7 +5,7 @@
     <form class="mb-4" @submit.prevent="login">
       <div class="form-floating mb-3" :class="{ error: v$.email.$errors.length }">
         <input
-          v-model="email"
+          v-model="emailValue"
           class="form-control"
           type="email"
           placeholder="Correo electrónico"
@@ -46,91 +46,66 @@
   </div>
 </template>
 
-<script lang="ts">
-import { useVuelidate } from '@vuelidate/core'
-import { email, required } from '@vuelidate/validators'
-import { RouterLink, useRouter } from 'vue-router'
-import { useToast } from 'vue-toast-notification'
+<script setup lang="ts">
+import { ref, reactive, toRefs } from 'vue'
+import useVuelidate from '@vuelidate/core'
+import { required, email } from '@vuelidate/validators'
 import { useLoginStore } from '@stores/login'
+import { useToast } from 'vue-toast-notification'
+import { useRouter } from 'vue-router'
 
-interface LoginError {
-  name?: string
-  message?: string
-  [key: string]: any
+const useLogin = useLoginStore()
+const toast = useToast()
+const router = useRouter()
+
+const showPassword = ref(false)
+
+const state = reactive({
+  email: '',
+  password: ''
+})
+
+const rules = {
+  email: { required, email },
+  password: { required }
 }
 
-export default {
-  components: {
-    RouterLink
-  },
-  setup() {
-    const useLogin = useLoginStore()
-    const toast = useToast()
-    const router = useRouter()
-    const v$ = useVuelidate()
+const v$ = useVuelidate(rules, state)
 
-    return { v$, useLogin, toast, router }
-  },
-  data() {
-    return {
-      email: '',
-      password: '',
-      showPassword: false
-    }
-  },
-  validations() {
-    return {
-      email: { email, required },
-      password: { required }
-    }
-  },
+const login = async () => {
+  const isFormCorrect = await v$.value.$validate()
 
-  methods: {
-    async login() {
-      try {
-        const isFormCorrect = await this.v$.$validate()
+  if (!isFormCorrect) return
 
-        if (!isFormCorrect) return
+  const data = {
+    email: state.email,
+    password: state.password
+  }
 
-        const data = {
-          email: this.email,
-          password: this.password
-        }
+  try {
+    const response = await useLogin.login({ data })
 
-        const response = await this.useLogin.login({ data })
+    toast.open({
+      message: `Ha iniciado sesión como ${response.user.name} ${response.user.surname}`,
+      type: 'info',
+      position: 'top-right',
+      dismissible: true
+    })
 
-        this.toast.open({
-          message: `Ha iniciado sesión como ${response.user.name} ${response.user.surname}`,
-          type: 'info',
-          position: 'top-right',
-          dismissible: true
-        })
-
-        setTimeout(() => {
-          this.router.push('/')
-        }, 500)
-      } catch (error) {
-        const err = error as LoginError
-
-        if (err?.name === 'Invalid') {
-          this.toast.open({
-            message: 'Correo electrónico o contraseña inválidas',
-            type: 'warning',
-            position: 'top-right',
-            dismissible: true
-          })
-        } else {
-          this.toast.open({
-            message: 'Error al iniciar sesión',
-            type: 'error',
-            position: 'top-right',
-            dismissible: true
-          })
-        }
-      }
-    }
+    setTimeout(() => {
+      router.push('/')
+    }, 500)
+  } catch (error) {
+    toast.open({
+      message: 'Error al iniciar sesión',
+      type: 'error',
+      position: 'top-right',
+      dismissible: true
+    })
   }
 }
+
+const { email: emailValue, password } = toRefs(state)
 </script>
 <style lang="scss" scoped>
 .title {

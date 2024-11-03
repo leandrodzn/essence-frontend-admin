@@ -4,19 +4,14 @@
     <Banner />
   </main>
 </template>
-<script lang="ts">
-import Banner from '@/components/home/Banner.vue'
-import Title from '@/components/Title.vue'
+<script setup lang="ts">
+import Banner from '@components/home/Banner.vue'
+import Title from '@components/Title.vue'
+import { onMounted } from 'vue'
 
-export default {
-  mounted() {
-    window.scrollTo(0, 0)
-  },
-  components: {
-    Banner,
-    Title
-  }
-}
+onMounted(() => {
+  window.scrollTo(0, 0)
+})
 </script>
 <style lang="scss" scoped>
 .home {

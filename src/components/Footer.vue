@@ -36,7 +36,7 @@
     </div>
   </div>
 </template>
-<script lang="ts">
+<script setup lang="ts">
 import LocationIcon from '@components/icons/LocationIcon.vue'
 import MailIcon from '@components/icons/MailIcon.vue'
 import CopyrightIcon from '@components/icons/CopyrightIcon.vue'
@@ -45,22 +45,9 @@ import LinkedinIcon from '@components/icons/LinkedinIcon.vue'
 import InstagramIcon from '@components/icons/InstagramIcon.vue'
 import PinterestIcon from '@components/icons/PinterestIcon.vue'
 
-export default {
-  components: {
-    LocationIcon,
-    MailIcon,
-    CopyrightIcon,
-    TwitterIcon,
-    LinkedinIcon,
-    InstagramIcon,
-    PinterestIcon
-  },
-  data: () => {
-    return {
-      currentYear: new Date().getFullYear()
-    }
-  }
-}
+import { ref } from 'vue'
+
+const currentYear = ref(new Date().getFullYear())
 </script>
 <style lang="scss" scoped>
 .footer-container {

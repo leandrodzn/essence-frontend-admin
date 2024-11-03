@@ -22,18 +22,13 @@
     </ul>
   </div>
 </template>
-<script lang="ts">
+<script setup lang="ts">
 import { useLoginStore } from '../stores/login'
-export default {
-  setup() {
-    const useLogin = useLoginStore()
-    return { useLogin }
-  },
-  methods: {
-    logout() {
-      this.useLogin.logout()
-    }
-  }
+const useLogin = useLoginStore()
+
+// Methods
+const logout = () => {
+  useLogin.logout()
 }
 </script>
 <style lang="css" scoped>
