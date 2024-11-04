@@ -127,7 +127,7 @@ const api: Api = {
     })
   },
 
-  put: (path: string, data: any, isMultipart: boolean, params?: Record<string, any>) => {
+  put: (path: string, data: any, isMultipart?: boolean, params?: Record<string, any>) => {
     return new Promise(async (resolve, reject) => {
       let formData: any = data
       const config: AxiosRequestConfig = {
