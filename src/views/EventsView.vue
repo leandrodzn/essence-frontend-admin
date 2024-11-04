@@ -20,7 +20,7 @@ export default {
 .container-events {
   // align-items: start;
   width: 100%;
-  background-color: #ede6de;
+  // background-color: #ede6de;
   margin-bottom: 20px;
   padding: 20px;
 }
