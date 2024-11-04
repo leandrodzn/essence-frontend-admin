@@ -43,9 +43,14 @@ export const useEventsStore = defineStore('events', () => {
     return response.data
   }
 
+  const deleteEvent = async (id: number): Promise<void> => {
+    await axios.delete(`${route}/${id}`)
+  }
+
   return {
     getEvents,
     createEvent,
-    updateEvent
+    updateEvent,
+    deleteEvent
   }
 })
