@@ -14,26 +14,29 @@
         <label for="floatingInputSubject">Correo electrónico</label>
         <div v-if="v$.email.$error" class="validation-text">Correo electrónico es requerido</div>
       </div>
-      <div class="input-group mb-3">
-        <div class="form-floating" :class="{ error: v$.password.$errors.length }">
-          <input
-            v-model="password"
-            class="form-control"
-            :type="showPassword ? 'text' : 'password'"
-            placeholder="Contraseña"
-            id="floatingInputSubject"
-          />
-          <label for="floatingInputSubject">Contraseña</label>
-          <div v-if="v$.password.$error" class="validation-text mb-2">Contraseña es requerida</div>
+      <div class="mb-4">
+        <div class="input-group">
+          <div class="form-floating" :class="{ error: v$.password.$errors.length }">
+            <input
+              v-model="password"
+              class="form-control"
+              :type="showPassword ? 'text' : 'password'"
+              placeholder="Contraseña"
+              id="floatingInputSubject"
+            />
+            <label for="floatingInputSubject">Contraseña</label>
+          </div>
+          <button
+            class="btn btn-outline-primary d-flex align-items-center justify-content-center"
+            type="button"
+            @click="showPassword = !showPassword"
+          >
+            <vue-feather :type="showPassword ? 'eye-off' : 'eye'" size="15"></vue-feather>
+          </button>
         </div>
-        <button
-          class="btn btn-outline-primary d-flex align-items-center justify-content-center"
-          type="button"
-          @click="showPassword = !showPassword"
-        >
-          <vue-feather :type="showPassword ? 'eye-off' : 'eye'" size="15"></vue-feather>
-        </button>
+        <div v-if="v$.password.$error" class="validation-text mb-2">Contraseña es requerida</div>
       </div>
+
       <!-- <RouterLink to="/history" class="forgot-password">
           ¿Olvidaste tu contraseña?
         </RouterLink> -->
@@ -122,7 +125,8 @@ const { email: emailValue, password } = toRefs(state)
   .validation-text {
     // font-weight: 400;
     margin: 5px;
-    font-size: 80%;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
     color: var(--primary);
   }
 
