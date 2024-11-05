@@ -100,7 +100,7 @@ bash
 bash
 
 ```sh
-  git push origin name/develop
+  git push origin name/develop // example: wilder/develop
 ```
 
 #### Don't forget to set your global profile in Git
