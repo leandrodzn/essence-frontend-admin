@@ -137,12 +137,17 @@ npm run lint
 
   - [![GitHub](https://img.shields.io/badge/GitHub-EmanuelCiau-red?style=flat&logo=github)](https://github.com/EmanuelCiau)
 
-- **María Belen Couoh Chan**
+- **Belen Couoh Chan**
 
   - [![GitHub](https://img.shields.io/badge/GitHub-Belen2708-pink?style=flat&logo=github)](https://github.com/Belen2708)
 
-- **Leandro Angel Dzib Nauat**
-  - [![GitHub](https://img.shields.io/badge/GitHub-leandrodzn-green?style=flat&logo=github)](https://github.com/leandrodzn)
+- **Leandro Dzib Nauat**
+
+  - [![GitHub](https://img.shields.io/badge/GitHub-leandrodzn-gold?style=flat&logo=github)](https://github.com/leandrodzn)
+
+- **Wilder Turriza Poot**
+
+  - [![GitHub](https://img.shields.io/badge/GitHub-WilderTurriza-blue?style=flat&logo=github)](https://github.com/WilderTurriza)
 
 ## Build with
 
