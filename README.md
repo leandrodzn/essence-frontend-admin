@@ -133,21 +133,25 @@ npm run lint
 
 ## Authors
 
-- **Domingo Emmanuel Ciau Uc**
+- **Domingo Ciau Uc**
 
-  - [![GitHub](https://img.shields.io/badge/GitHub-EmanuelCiau-red?style=flat&logo=github)](https://github.com/EmanuelCiau)
+  [![GitHub](https://img.shields.io/badge/GitHub-DomingoCiau02-red?style=flat&logo=github)](https://github.com/DomingoCiau02)
 
 - **Belen Couoh Chan**
 
-  - [![GitHub](https://img.shields.io/badge/GitHub-Belen2708-pink?style=flat&logo=github)](https://github.com/Belen2708)
+  [![GitHub](https://img.shields.io/badge/GitHub-Belen2708-pink?style=flat&logo=github)](https://github.com/Belen2708)
 
 - **Leandro Dzib Nauat**
 
-  - [![GitHub](https://img.shields.io/badge/GitHub-leandrodzn-gold?style=flat&logo=github)](https://github.com/leandrodzn)
+  [![GitHub](https://img.shields.io/badge/GitHub-leandrodzn-green?style=flat&logo=github)](https://github.com/leandrodzn)
 
 - **Wilder Turriza Poot**
 
-  - [![GitHub](https://img.shields.io/badge/GitHub-WilderTurriza-blue?style=flat&logo=github)](https://github.com/WilderTurriza)
+  [![GitHub](https://img.shields.io/badge/GitHub-WilderTurriza-blue?style=flat&logo=github)](https://github.com/WilderTurriza)
+
+- **Wilbeth Kantun Lizama**
+
+  [![GitHub](https://img.shields.io/badge/GitHub-WilberthKantun-yellow?style=flat&logo=github)](https://github.com/WilberthKantun)
 
 ## Build with
 
