@@ -18,24 +18,26 @@
         </div>
         <div class="modal-body form">
           <form class="mb-4 mt-4" @submit.prevent="save">
-            <div class="form-floating mb-3" :class="{ error: v$.name.$errors.length }">
+            <div class="form-floating mb-3">
               <input
                 v-model="name"
                 class="form-control"
                 type="text"
                 placeholder="Nombre"
                 id="floatingInputSubject"
+                :class="{ error: v$.name.$errors.length }"
               />
               <label for="floatingInputSubject">Nombre</label>
               <div v-if="v$.name.$error" class="validation-text">Nombre es requerido</div>
             </div>
-            <div class="form-floating mb-3" :class="{ error: v$.description.$errors.length }">
+            <div class="form-floating mb-3">
               <input
                 v-model="description"
                 class="form-control"
                 type="text"
                 placeholder="Descripción"
                 id="floatingInputDescription"
+                :class="{ error: v$.description.$errors.length }"
               />
               <label for="floatingInputDescription">Descripción</label>
               <div v-if="v$.description.$error" class="validation-text">
@@ -168,6 +170,10 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+.error {
+  border: 1px solid var(--dark-purple);
+}
+
 .modal-content {
   padding: 20px;
 }

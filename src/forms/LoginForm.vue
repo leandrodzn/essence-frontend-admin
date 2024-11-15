@@ -3,26 +3,28 @@
     <h2 class="title">Panel de control</h2>
     <div class="mb-3">Inicie sesión con sus credenciales</div>
     <form class="mb-4" @submit.prevent="login">
-      <div class="form-floating mb-3" :class="{ error: v$.email.$errors.length }">
+      <div class="form-floating mb-3">
         <input
           v-model="emailValue"
           class="form-control"
           type="email"
           placeholder="Correo electrónico"
           id="floatingInputSubject"
+          :class="{ error: v$.email.$errors.length }"
         />
         <label for="floatingInputSubject">Correo electrónico</label>
         <div v-if="v$.email.$error" class="validation-text">Correo electrónico es requerido</div>
       </div>
       <div class="mb-4">
         <div class="input-group">
-          <div class="form-floating" :class="{ error: v$.password.$errors.length }">
+          <div class="form-floating">
             <input
               v-model="password"
               class="form-control"
               :type="showPassword ? 'text' : 'password'"
               placeholder="Contraseña"
               id="floatingInputSubject"
+              :class="{ error: v$.password.$errors.length }"
             />
             <label for="floatingInputSubject">Contraseña</label>
           </div>
@@ -111,6 +113,10 @@ const login = async () => {
 const { email: emailValue, password } = toRefs(state)
 </script>
 <style lang="scss" scoped>
+.error {
+  border: 1px solid var(--dark-purple);
+}
+
 .title {
   font-weight: bold;
   color: var(--primary);
