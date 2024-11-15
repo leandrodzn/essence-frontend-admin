@@ -16,7 +16,8 @@
       "@stores/*": ["./src/stores/*"],
       "@views/*": ["./src/views/*"],
       "@forms/*": ["./src/forms/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   }
 }
