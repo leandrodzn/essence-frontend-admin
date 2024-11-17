@@ -43,11 +43,8 @@
           ¿Olvidaste tu contraseña?
         </RouterLink> -->
 
-      <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+      <button type="submit" class="btn btn-primary" style="color: white">Iniciar sesión</button>
     </form>
-
-    <!-- <div class="mb-0">¿No tienes una cuenta?</div>
-    <RouterLink to="/register" class="register-link">Regístrate</RouterLink> -->
   </div>
 </template>
 

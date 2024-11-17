@@ -49,7 +49,7 @@
               <button type="button" class="btn btn-outline-primary" @click="close(false)">
                 Cancelar
               </button>
-              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="submit" class="btn btn-primary" style="color: white">Guardar</button>
             </div>
           </form>
         </div>
