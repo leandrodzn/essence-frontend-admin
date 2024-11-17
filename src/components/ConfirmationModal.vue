@@ -17,7 +17,9 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" @click="cancel">Cancelar</button>
-          <button type="button" class="btn btn-primary" @click="confirm">Confirmar</button>
+          <button type="button" class="btn btn-primary" style="color: white" @click="confirm">
+            Confirmar
+          </button>
         </div>
       </div>
     </div>
