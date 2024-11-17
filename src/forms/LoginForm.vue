@@ -13,7 +13,9 @@
           :class="{ error: v$.email.$errors.length }"
         />
         <label for="floatingInputSubject">Correo electrónico</label>
-        <div v-if="v$.email.$error" class="validation-text">Correo electrónico es requerido</div>
+        <div v-if="v$.email.$error" class="validation-text">
+          {{ errorParser(v$.email.$errors, 'Correo electrónico') }}
+        </div>
       </div>
       <div class="mb-4">
         <div class="input-group">
@@ -55,6 +57,7 @@ import { required, email } from '@vuelidate/validators'
 import { useLoginStore } from '@stores/login'
 import { useToast } from 'vue-toast-notification'
 import { useRouter } from 'vue-router'
+import { errorParser } from '@utils'
 
 const useLogin = useLoginStore()
 const toast = useToast()
