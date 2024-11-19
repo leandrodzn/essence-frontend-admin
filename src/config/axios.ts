@@ -48,13 +48,38 @@ axiosApi.interceptors.response.use(
 )
 
 function buildFormData(formData: FormData, data: any, parentKey?: string): void {
-  if (data && typeof data === 'object' && !(data instanceof Date) && !(data instanceof File)) {
+  if (data && Array.isArray(data)) {
+    // Special case: arrays
+    data.forEach((item, index) => {
+      if (item instanceof File) {
+        // If it's a file, append directly
+        formData.append(`${parentKey}`, item)
+      } else if (typeof item === 'object') {
+        // If it's an object, call recursively
+        buildFormData(formData, item, `${parentKey}[${index}]`)
+      } else {
+        // Other values (e.g. strings or numbers)
+        formData.append(`${parentKey}[${index}]`, item ?? '')
+      }
+    })
+  } else if (
+    data &&
+    typeof data === 'object' &&
+    !(data instanceof Date) &&
+    !(data instanceof File)
+  ) {
+    // If it's an object, iterate over its keys
     Object.keys(data).forEach((key) => {
       buildFormData(formData, data[key], parentKey ? `${parentKey}[${key}]` : key)
     })
   } else {
-    const value = data == null ? '' : data
-    formData.append(parentKey || '', value)
+    // General cases: files, dates, or simple values
+    if (data instanceof File) {
+      formData.append(parentKey || '', data)
+    } else {
+      const value = data == null ? '' : data
+      formData.append(parentKey || '', value)
+    }
   }
 }
 
