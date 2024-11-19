@@ -30,19 +30,31 @@ const router = createRouter({
     {
       path: '/petitions',
       name: 'petitions',
-      component: () => import('@views/PetitionsView.vue'),
+      component: () => import('@/views/PetitionsView.vue'),
       beforeEnter: requireLogged
     },
     {
       path: '/templates',
       name: 'templates',
-      component: () => import('@views/TemplatesView.vue'),
+      component: () => import('@/views/TemplatesView.vue'),
+      beforeEnter: requireLogged
+    },
+    {
+      path: '/templates/new',
+      name: 'new-template',
+      component: () => import('@/views/NewTemplateView.vue'),
+      beforeEnter: requireLogged
+    },
+    {
+      path: '/templates/edit/:id',
+      name: 'edit-template',
+      component: () => import('@/views/EditTemplateView.vue'),
       beforeEnter: requireLogged
     },
     {
       path: '/events',
       name: 'events',
-      component: () => import('@views/EventsView.vue'),
+      component: () => import('@/views/EventsView.vue'),
       beforeEnter: requireLogged
     },
     {
