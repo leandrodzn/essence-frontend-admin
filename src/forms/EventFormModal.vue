@@ -132,7 +132,6 @@ const save = async () => {
       dismissible: true
     })
   } catch (error) {
-    console.log(error)
     toast.open({
       message: props.item?.id ? 'Error al actualizar evento' : 'Error al crear evento',
       type: 'error',
