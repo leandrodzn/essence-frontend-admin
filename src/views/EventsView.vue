@@ -12,6 +12,7 @@ import Title from '@/components/Title.vue'
 export default {
   components: {
     EventsList,
+    // eslint-disable-next-line vue/no-reserved-component-names
     Title
   }
 }
