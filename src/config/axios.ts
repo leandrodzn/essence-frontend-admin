@@ -94,7 +94,12 @@ interface Api {
     isMultipart?: boolean,
     params?: Record<string, any>
   ) => Promise<any>
-  put: (path: string, data: any, isMultipart: boolean, params?: Record<string, any>) => Promise<any>
+  put: (
+    path: string,
+    data: any,
+    isMultipart?: boolean,
+    params?: Record<string, any>
+  ) => Promise<any>
   delete: (path: string, params?: Record<string, any>) => Promise<any>
   addResponseInterceptor: (
     onResponse?: (response: AxiosResponse) => AxiosResponse,
