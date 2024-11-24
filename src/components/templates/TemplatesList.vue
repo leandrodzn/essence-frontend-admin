@@ -6,7 +6,7 @@
         <span class="visually-hidden">Cargando...</span>
       </div>
     </div>
-    <div v-else>
+    <div v-else class="table-responsive">
       <!-- Button to add a new event -->
       <div class="text-center my-4 d-flex align-items-center justify-content-center">
         <button
