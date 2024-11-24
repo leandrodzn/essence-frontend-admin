@@ -45,22 +45,25 @@
                 Ver ejemplo
               </a>
             </td>
-            <td class="d-flex align-items-center justify-content-start">
-              <button
-                class="btn btn-primary btn-sm m-2 d-flex align-items-center justify-content-center"
-                title="Editar"
-                @click="() => editTemplate(webTemplate)"
-              >
-                <vue-feather type="edit" size="20px" stroke="white" />
-              </button>
-              <button
-                class="btn btn-dark btn-sm d-flex align-items-center justify-content-center"
-                title="Eliminar"
-                :disabled="webTemplate.busy"
-                @click="() => showModalConfirmationDelete(webTemplate)"
-              >
-                <vue-feather type="trash-2" size="20px" stroke="white" />
-              </button>
+            <td>
+              <div class="d-flex align-items-center justify-content-start">
+                <button
+                  class="btn btn-primary btn-sm m-2 d-flex align-items-center justify-content-center"
+                  title="Editar"
+                  @click="() => editTemplate(webTemplate)"
+                >
+                  <vue-feather type="edit" size="20px" stroke="white" />
+                </button>
+                <button
+                  class="btn btn-dark btn-sm d-flex align-items-center justify-content-center"
+                  title="Eliminar"
+                  :disabled="webTemplate.busy"
+                  @click="() => showModalConfirmationDelete(webTemplate)"
+                >
+                  <vue-feather type="trash-2" size="20px" stroke="white" />
+                </button>
+              </div>
+              
             </td>
           </tr>
         </tbody>
