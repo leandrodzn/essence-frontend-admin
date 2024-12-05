@@ -23,7 +23,7 @@ onMounted(() => {
 }
 .bg-login {
   // border: 1px solid red;
-  background-image: url('login-bg-image.png');
+  background-image: url('/login-bg-image.png');
   background-size: cover;
   background-position: center;
   position: relative; /* Añadido para permitir que la capa se posicione correctamente */
