@@ -57,7 +57,7 @@ import { required, email } from '@vuelidate/validators'
 import { useLoginStore } from '@stores/login'
 import { useToast } from 'vue-toast-notification'
 import { useRouter } from 'vue-router'
-import { errorParser } from '@utils'
+import { errorParser } from '@/utils'
 
 const useLogin = useLoginStore()
 const toast = useToast()
